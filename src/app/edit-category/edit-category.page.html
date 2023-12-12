@@ -1,0 +1,32 @@
+<section class="Add-category d-flex justify-content-center align-items-center ">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="d-flex justify-content-center align-items-center  ">
+        <div class="Add-category-content p-5 mt-5 ">
+          <h5 class="head-name">Category</h5>
+          <div class="upload-image d-flex justify-content-center align-items-center mt-3 ">
+            <figure class="col-lg-7 col-7 col-md-7 ">
+              <div class="Add-category-img">
+                <img src="../../assets/images/pizza.jpg" alt="">
+                <input type="file" id="uploadButton" accept="image/*">
+              </div>
+              <figcaption id="file-name"></figcaption>
+              <!-- <div class="image-edit-icon"><mat-icon class="edit">edit</mat-icon></div> -->
+            </figure>
+          </div>
+          <div class="C-name mt-3">
+            <input type="text" placeholder="" [(ngModel)]="value">
+          </div>
+          <div class=" status d-flex justify-content-center align-items-center mt-4">
+            <ion-chip class="Enable">Enable</ion-chip>
+            <ion-chip class="Disable">Disable</ion-chip>
+          </div>
+          <div class=" Submit d-flex justify-content-center align-items-center mt-5">
+            <button class=" s-button " (click)="return()"><mat-icon
+                class="Submit-icon">done_all</mat-icon>Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

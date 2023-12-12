@@ -1,0 +1,35 @@
+<section class="Add-category d-flex justify-content-center align-items-center ">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="d-flex justify-content-center align-items-center  ">
+        <div class="Add-category-content p-5 ">
+          <h5 class="head-name">Category</h5>
+          <form (ngSubmit)="onsubmit()" id="categoryform" name="caetegory" #caetegory="ngForm">
+          <div class="upload-image d-flex justify-content-center align-items-center mt-3 wrapper" id="imagewrap">
+            <figure class="col-lg-7 col-7 col-md-7 ">
+              <div class="Add-category-img">
+                <input required type="file" (change)="onSelectFile($event)" accept="image/*">
+                <img [src]="url ? url : ''"
+                    name="image" 
+                     id="image" >
+              </div>
+            </figure>
+          </div>
+          <div class="C-name mt-3">
+            <input required type="text" placeholder="Enter Category Name" name="category_name" #category_name="ngModel"
+            id="category_name" ngModel [(ngModel)]="categoryModel.category_name" >
+          </div>
+          <div class=" status d-flex justify-content-center align-items-center mt-4">
+            <ion-chip [ngClass]="{'Enable': isEnableActive}" (click)="changeEnableClass()">Enable</ion-chip>
+            <ion-chip [ngClass]="{'Disable': isDisableActive}" (click)="changeDisableClass()">Disable</ion-chip>
+          </div>
+          <div class=" Submit d-flex justify-content-center align-items-center mt-5">
+            <button class=" s-button "><mat-icon
+                class="Submit-icon">done_all</mat-icon>Submit</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

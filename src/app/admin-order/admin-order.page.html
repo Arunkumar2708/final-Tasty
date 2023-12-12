@@ -1,0 +1,110 @@
+<!-- <ion-content overflow-scroll="false"> -->
+
+<!-- ------------Nav-Bar ------------------>
+<div class="main-content">
+  <div class="container">
+    <div class="row ">
+      <header>
+        <nav>
+          <div class="nav-list mt-2">
+            <!-- <mat-icon content-Id="main-content">menu</mat-icon> -->
+            <ion-menu-button content-Id="main-content"></ion-menu-button>
+            <a [ngClass]="{'selected': isTakeAway}" (click)="enableTakeAway()">Take Away</a>
+            <a [ngClass]="{'selected': isDineIn}" (click)="enableDineIn()">Dine In</a>
+            <a [ngClass]="{'selected': isDoorDelivery}" (click)="enableDoorDelivery()">Door Delivery</a>
+          </div>
+        </nav>
+      </header>
+      <div class="scroll-container" *ngIf="showTableList">
+        <div class="chips">
+          <ion-chip (click)="choodeTable(k, $event)" *ngFor="let item of items;let k=index"
+            [ngClass]="{'selected': tableNo == k}">
+            <ion-label>{{k+1}}</ion-label>
+          </ion-chip>
+        </div>
+      </div>
+
+      <!------------------------------------------ Center ------------------------------------>
+
+      <!-- -----------------Side-bar-------------->
+      <section class="col-4 side-list text-center">
+        <div class="side-view  mt-5" *ngFor="let categoryData of categoryList;let j= index;">
+          <a (click)="Inview(categoryData.category_name)">
+            <div *ngIf="categoryData.category_image !=''; else elseBlock" class="Category-image">
+              <img src={{image_url}}{{categoryData.category_image}} alt="">
+            </div>
+            <ng-template #elseBlock>
+              <div class="Category-image">
+                <img [src]="" alt="">
+              </div>
+            </ng-template>
+            <p>{{categoryData.category_name}}</p>
+          </a>
+        </div>
+      </section>
+
+      <!------------- Sub-Categories ------------->
+
+      <div class="col-8 text-center content">
+        <div *ngFor="let subCategoryData of subCategoryList;let j= index;">
+          <h6 id="{{subCategoryData.category_name}}" class="S-Title-Name">{{subCategoryData.category_name}}</h6>
+          <div class="row" *ngFor="let data of subCategoryData.data;let r= index;">
+            <p class="text-start S-Type col-12">{{data.type}}</p>
+            <div class="col-6 col-md-4" *ngFor="let subCategory of data.items;let k= index;">
+              <div
+                [ngClass]="{'veg': subCategory?.sub_category_type == 1, 'non-veg': subCategory?.sub_category_type == 2}"
+                class="box veg">
+                <img src="{{image_url}}{{subCategory.sub_category_image}}" alt="">
+                <p class="S-name">{{subCategory.sub_category_name}}</p>
+                <p class="S-Price">Rs. {{subCategory.price}}</p>
+                <div class="Rate d-flex align-items-center justify-content-center">
+                  <label for=""><span class="material-symbols-outlined Delete-Button" (click)="decrement(subCategory)">
+                      do_not_disturb_on
+                    </span></label>
+                  <input type="number" value="{{subCategory.qty}}">
+                  <label for=""><span class="material-symbols-outlined Add-Button" (click)="increment(subCategory)">
+                      data_saver_on
+                    </span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!-- ---------------------------------------------Fooder------------------------------------>
+
+  <footer class="d-flex justify-content-between text-center">
+    <div class="Footer-Icons">
+      <span class="material-symbols-outlined">
+        bookmark_manager
+      </span>
+      <p [routerLink]="['/admin-draft']">DRAFT</p>
+    </div>
+    <div class="Footer-Icons">
+      <span class="material-symbols-outlined">
+        visibility
+      </span>
+      <p [routerLink]="['/admin-prebill']"> PRE-BILL</p>
+    </div>
+    <div class="Footer-Icons">
+      <span class="material-symbols-outlined">
+        manage_history
+      </span>
+      <p [routerLink]="['/admin-history']">HISTORY</p>
+    </div>
+  </footer>
+
+
+  <!--------------View-Cart ---------->
+  <div class="View-Cart-Button text-center">
+    <button (click)="addToCart($event)">View Cart <span class="material-symbols-outlined">
+        shopping_cart
+      </span></button>
+  </div>
+</div>

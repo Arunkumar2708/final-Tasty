@@ -1,0 +1,7 @@
+{
+  "name": "Tasty-dots-new",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

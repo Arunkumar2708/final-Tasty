@@ -1,0 +1,27 @@
+<div class="container">
+  <h4 class="title">Customer Detail</h4>
+
+  <ion-list class="list">
+    <ion-item class="item">
+      <ion-input class="input" type="tel" ngModel [(ngModel)]="customerDetailModel.customer_number"
+        placeholder="MOBILE NO"></ion-input>
+    </ion-item>
+
+    <ion-item class="item">
+      <ion-input class="input" type="number" ngModel [(ngModel)]="customerDetailModel.discount"
+        placeholder="discount">DISCOUNT</ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div class="pay-method">
+    <ion-chip [ngClass]="{'payment': isCash}" (click)="enableCash()" tabindex="1" color="dark">Cash</ion-chip>
+    <ion-chip [ngClass]="{'payment': isCard}" (click)="enableCard()" tabindex="1" color="dark">Card</ion-chip>
+    <ion-chip [ngClass]="{'payment': isUpi}" (click)="enableUpi()" tabindex="1" color="dark">UPI</ion-chip>
+  </div>
+
+  <br>
+  <div class="button">
+    <ion-button shape="round" color="warning" (click)="onsubmit($event)">ok</ion-button>
+  </div>
+
+</div>

@@ -1,0 +1,17 @@
+<ion-buttons slot="start" class="menu">
+  <!-- <ion-menu-button menu="main-menu"></ion-menu-button> -->
+  <ion-menu-button content-Id="main-content"></ion-menu-button>
+  <h3 class="title">Draft</h3>
+</ion-buttons>
+
+<ion-content>
+  <ion-grid *ngFor="let item of draftList;let k = index;">
+    <ion-col (click)="navigate(item.order_id, item.status, item.total_amount, $event)">
+      <ion-row id="box" class="orders">
+        <div class="time">{{item.time}}</div>
+        <div class="bill"> <b>{{item.bill_no}}</b></div>
+        <div class="time">₹{{item.total_amount}}</div>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
+</ion-content>

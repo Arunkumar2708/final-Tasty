@@ -1,0 +1,35 @@
+<section class="Login-page d-flex align-items-center justify-content-center ">
+    <div class="bimg"><img src="../../assets/images/kkk.png" alt=""></div>
+    <div class="row ">
+        <div class="login-validation align-items-center py-5 d-lg-flex ">
+            <div class="login-form ">
+                <form action="">
+                    <div class="text-center">
+                        <img class="tasty-logo" src="../../assets/icon/tasty-icon-removebg-preview.png" alt="">
+                    </div>
+                    <div class="login-input mt-5">
+                        <input id="num" type="number" placeholder="Enter your number" /><br />
+                        <div class="input-container">
+                            <input class="d-inline-flex " id="pass" [type]="password" class="my-3"
+                                placeholder="Password">
+                            <div (click)="showPass()" (click)="onClick()">
+                                <span *ngIf="HidePass" class="material-symbols-outlined hide">
+                                    visibility_off
+                                </span>
+                                <span class="material-symbols-outlined show">
+                                    visibility
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login-button mt-3">
+                        <button (click)="goadmin()">Login<span class="material-symbols-outlined">
+                                login
+                            </span></button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

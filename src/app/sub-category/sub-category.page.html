@@ -1,0 +1,53 @@
+
+<section>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  </ion-refresher>
+
+  <header class="d-flex align-items-center justify-content-between">
+
+    <ion-menu-button content-Id="main-content"></ion-menu-button>
+    <h3 class="mt-2">
+     Sub Category
+    </h3>
+    <mat-icon (click)="gocreate()" class="mx-3">loupe</mat-icon>
+
+</header>
+
+  <section id="Sub-Category-Section">
+    <div class="container d-flex align-items-center justify-content-center">
+      <div class="row col-12">
+        <div id="category-view" class="col-6 col-md-4 col-lg-3 text-center" *ngFor="let data of subCategoryList;let j= index;" >
+          <div [ngClass]="{'enable': data?.status == 1, 'disable': data?.status != 1}" class="box-container enable">
+            <div class="sub-icons d-flex align-items-center justify-content-end mt-2">
+              <div class="edit-icon d-flex align-items-center justify-content-center me-1">
+                <mat-icon class="icon-size" (click)="goeditsub($event, data)" >edit</mat-icon>
+              </div>
+              <div class="delete-icon d-flex align-items-center justify-content-center me-1">
+                <mat-icon (click)="showAlert(data.sub_category_id, data.sub_category_name, $event)" class="icon-size">delete_forever</mat-icon>
+              </div>
+            </div>
+
+            <div *ngIf="data.sub_category_image !=''; else elseBlock" class="sub-image">
+              <img src={{image_url}}{{data.sub_category_image}} alt="">
+            </div>
+            <ng-template #elseBlock>
+              <div class="sub-image">
+                <img [src]="" alt="">
+              </div>
+            </ng-template>
+            <div class="sub-name">
+              <h5>{{data.sub_category_name}}</h5>
+            </div>
+            <div class="sub-type">
+              {{!!data?.sub_category_type ? getSubCategaryType(data?.sub_category_type) : '-'}}
+            </div>
+            <div class="sub-price">
+              <p>Rs.{{data?.price}}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,26 @@
+<ion-buttons slot="start" class="menu">
+  <ion-menu-button content-Id="main-content"></ion-menu-button>
+  <p class="title">PREBILL-ORDERS</p>
+</ion-buttons>
+
+
+<ion-content>
+
+  <ion-grid *ngFor="let item of preBillList;let k = index;">
+    <!-- <ion-col> -->
+      <ion-row class="orders">
+        <div class="bill"> {{item.table_no}}</div>
+        <div class="bill"> <b>{{item.bill_no}}</b></div>
+        <div class="time">{{item.time}}</div>
+        <div class="buttons d-flex justify-content-between">
+          <div>        
+            <ion-button shape="round" color="warning" (click)="preBill(item.order_id, $event)">Pre-Bill</ion-button>
+          </div>
+          <div>        
+            <ion-button shape="round" color="warning" (click)="print(item.order_id, item.total_amount, $event)">Print</ion-button>
+          </div>
+        </div>
+      </ion-row>
+    <!-- </ion-col> -->
+  </ion-grid>
+</ion-content>

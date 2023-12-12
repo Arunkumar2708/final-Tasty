@@ -1,0 +1,92 @@
+<div class="topContainer">
+  <div class="bill">
+    <!-- <img src="../../assets/icon/tasty-icon-removebg-preview.png"> -->
+    <div class="brand">
+      <b>TASTY DOTS</b>
+    </div>
+    <div class="address">
+      Address-<br> Phone No- 0192083910<br>
+      RETAIL INVOICE </div>
+    <br>
+    <div class="bill-details">
+      <div class="flex justify-between">
+        <h6>BILL NO: <b>{{result?.bill_no??''}}</b></h6>
+        <h6 *ngIf="result?.table_no != null; else elseBlock">TABLE NO: <b>{{result?.table_no}}</b></h6>
+        <ng-template #elseBlock>
+          <h6><b>{{result?.order_type}}</b></h6>
+        </ng-template>
+      </div>
+      <div class="flex justify-between">
+        <div>TIME: {{result?.time??''}}</div>
+        <div>DATE: {{result?.date??''}}</div>
+      </div>
+    </div>
+    <br>
+    <table class="table">
+      <tr class="header">
+        <th>
+          Item Name
+        </th>
+        <th>
+          Qty
+        </th>
+        <th>
+          Unit cost
+        </th>
+        <th>
+          Amount
+        </th>
+      </tr>
+      <tr *ngFor="let item of items;let k = index;">
+        <td>{{item.item_name}}</td>
+        <td>{{item.qty}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.total_price}}</td>
+      </tr>
+      <tr class="subTotal" *ngIf="result?.discount > 0">
+        <td></td>
+        <td>Total</td>
+        <td></td>
+        <td>{{result?.sub_total??''}}</td>
+        <td></td>
+      </tr>
+      <tr *ngIf="result?.discount > 0">
+        <td></td>
+        <td>Discount</td>
+        <td></td>
+        <td>{{result?.discount??''}}%</td>
+      </tr>
+      <tr class="total">
+        <td></td>
+        <td>Total</td>
+        <td></td>
+        <td>{{result?.total_amount??''}}.00</td>
+      </tr>
+    </table>
+
+    <br>
+    Mode of Order: {{result?.order_type??''}}<br>
+    Mode of Payment: {{result?.payment_type??''}}<br>
+    <br>
+
+    <div class="button">
+      <ion-row>
+        <ion-col>
+          <ion-button size="small" (click)="updateStatus('Completed', $event)">Print</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button size="small" (click)="updateStatus('Completed', $event)">KOT + Print</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button size="small" (click)="updateStatus('Draft', $event)">Draft</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button size="small" (click)="updateStatus('Cancelled', $event)">Cancel</ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+    Thank You ! Please visit again
+  </div>
+</div>

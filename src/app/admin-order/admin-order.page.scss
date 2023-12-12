@@ -1,0 +1,236 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+// .main-content {
+
+//     // height: 100%;
+//     // overflow: inherit;
+// }
+.container {
+  margin: 0 auto;
+  box-sizing: border-box;
+
+}
+
+// -------------------------------Nav-Bar--------------------------
+
+
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+nav a {
+  height: 33px;
+  margin-top: 8px;
+  font-weight: 600;
+  background-color: rgba(255, 191, 82, 0.368627451);
+  border-radius: 14px;
+  padding: 5px 5px;
+  font-size: 13px;
+  // font-family: "Black Ops One", cursive;
+  font-family: 'Playfair Display', serif;
+  border: solid 2px #80808099;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+nav a:hover {
+  // color: rgb(28, 31, 30);
+  // transition: 0.2s 0.1s;
+  border: solid 1px #b9b9b9;
+}
+
+
+// -----------------------------Side-Categories--------------------
+section {
+  overflow: auto;
+  height: 85vh;
+
+}
+
+.side-view {
+  margin-bottom: 9px;
+}
+
+.side-list img {
+  width: 40px;
+}
+
+
+.side-view p {
+  font-family: 'Black Ops One', cursive;
+}
+
+.side-view:hover,
+.side-view.active {
+  cursor: pointer;
+  border-bottom: solid 1px black;
+  background-color: #ffffff;
+  background-image: linear-gradient(190deg, #ffffff 23%, #ffb900 87%);
+  color: #ff0000;
+  font-weight: 500;
+}
+
+//------------------------------- box-1-------------------------------
+.content {
+  overflow: auto;
+  height: 85vh;
+}
+
+.S-Title-Name {
+  font-weight: 600;
+}
+
+.S-Type {
+  font-size: 15px;
+  font-weight: 600;
+  color: forestgreen;
+}
+
+.box {
+  text-align: center;
+  background-color: #cdcdcd70;
+  // width: 94px;
+  padding: 3px;
+  border-radius: 15px;
+  box-shadow: #1c8a57 0px 5px 15px;
+  margin-bottom: 20px;
+}
+
+.box img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: solid 2px #ffc1077a;
+}
+
+.box p {
+  margin: 0;
+
+}
+
+.S-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.S-Price {
+  font-size: 12px;
+  font-weight: 800;
+  color: #912c2c;
+}
+
+.box input {
+  width: 26px;
+  height: 34px;
+  text-align: center;
+  color: rgb(238, 143, 0);
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  font-size: 21px;
+  padding-bottom: 10px;
+}
+
+.veg {
+  box-shadow: #1c8a57 0px 5px 15px;
+}
+
+.non-veg {
+  box-shadow: #e53d4d 0px 5px 15px;
+}
+
+.S-Type-2 {
+  color: #5e0b0b;
+}
+
+.box span {
+  font-size: 29px;
+}
+
+// -------------------------Fooder----------------
+footer {
+  background-color: white;
+  // box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  // height: 40px;
+position: sticky;
+bottom: 0;
+width: 100%;
+padding: 0 17px;
+}
+
+.Footer-Icons:hover {
+  color: #415295;
+}
+
+footer span {
+  font-size: 20px;
+}
+
+footer p {
+  font-size: 10px;
+}
+
+// -----------------------View-Cart---------------------------
+
+.View-Cart-Button {
+  position: fixed;
+  // top: 584px;
+  right: 18px;
+  bottom: 65px;
+}
+
+.View-Cart-Button button {
+  background-color: #ffcb00;
+  padding: 0 12px;
+  border-radius: 6px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  font-weight: 500;
+  border: solid 1px #1e90ff99;
+}
+
+.View-Cart-Button button span {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.selected  {
+  color: green;
+  background-color: #f9cb25;
+}
+
+.scroll-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+  width: 100%;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  position: fixed;
+  top: 55px;
+  background-color: white;
+}
+
+header{
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.chips {
+  display: inline-block;
+  margin: 5px;
+
+  ion-chip{
+    padding: 20px;
+  }
+}

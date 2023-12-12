@@ -1,0 +1,49 @@
+#Table-Section{
+  height: 100vh;
+  overflow: auto;
+}
+.container{
+  width: 90%;
+}
+.box{
+  height: 100vh;
+}
+.Tables{
+  background-color: #c8c8c8cf;
+  height: 242px;
+  width: 230px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.Total-Table input{
+  width: 70px;
+  text-align: center;
+  border-radius: 15px;
+  border: solid 2px gray;
+  padding: 6px;
+  color: rgb(238, 143, 0);
+  font-weight: 700;
+}
+.Add-Button button{
+  background-color: #f5ba07;
+  padding: 8px 20px;
+  border-radius: 11px;
+  font-weight: 700;
+  height: 44px;
+}
+label{
+  font-family: "Abril Fatface", cursive;
+  font-size: 20px;
+  font-weight: 600;
+}
+.Delete-Button button{
+  background-color: #f70018cc;
+  padding: 8px 13px;
+  border-radius: 11px;
+  font-weight: 700;
+  color: white;
+  height: 44px;
+}
+button:hover{
+  border: solid 2px white;
+}

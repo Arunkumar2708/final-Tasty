@@ -1,0 +1,46 @@
+
+<div class="container">
+
+  <p class="title">PREVIEW-ORDERS</p>
+
+  <ion-row class="orders">
+      <img src="/assets/images/icon.png" class="img">
+      <ion-col>
+        <ion-row>
+      <p>Burger</p></ion-row>
+
+       <ion-row>
+      <div class="count">
+        <div class="quantity" *ngFor="let prod of productArray">
+          <div class="wrapper" >
+            <span class="minus" (click)="dec(prod)">-</span>
+            <span class="number"> {{prod.qnt}}</span>
+            <span class="plus" (click)="inc(prod)">+</span>
+          </div>
+      </div>
+      </div></ion-row>
+      </ion-col>
+      <ion-col>
+    <div class="amount">$ 90</div>
+  </ion-col>
+  </ion-row>
+
+
+
+<div class="box">
+
+   <ion-button id="open-modal" color="warning" shape=round size="small">PROCEED</ion-button>
+
+   <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+     <ng-template>
+
+         <ion-item class="item">
+           <ion-input class="input" type="tel" placeholder="MOBILE NO"></ion-input>
+         </ion-item>
+
+       <ion-button routerLink="/admin-order"class="kot" color="warning" shape=round size="small">KOT</ion-button>
+     </ng-template>
+   </ion-modal>
+
+</div>
+</div>

@@ -1,0 +1,53 @@
+<!-- <ion-content overflow-scroll="false"> -->
+
+<!-- ------------Nav-Bar ------------------>
+<div class="main-content">
+  <div class="head">
+    <ion-menu-button slot="start" content-Id="main-content"></ion-menu-button>
+    <p class="title">HISTORY</p>
+  </div>
+
+  <div class="container">
+    <div class="row ">
+
+      <nav>
+        <div class="nav-list mt-2">
+          <a [ngClass]="{'selected': isTakeAway}" (click)="enableTakeAway()">Take Away</a>
+          <a [ngClass]="{'selected': isDineIn}" (click)="enableDineIn()">Dine In</a>
+          <a [ngClass]="{'selected': isDoorDelivery}" (click)="enableDoorDelivery()">Door Delivery</a>
+        </div>
+
+      </nav>
+      <!------------------------------------------ Center ------------------------------------>
+
+      <!-- -----------------Side-bar-------------->
+      <section class="col-3 side-list text-center">
+        <ul *ngIf="showTableList">
+          <div class="side-view" (click)="choodeTable(k)" *ngFor="let item of items;let k=index">
+            <p>T{{k+1}}</p>
+          </div>
+        </ul>
+      </section>
+
+      <div class="col-9 text-center content">
+
+        <ion-row class="orders" *ngFor="let item of historyList;let k = index;">
+          <div class="time ">{{item.orders.time}}</div>
+          <div class="bill"> <b>{{item.orders.bill_no}}</b></div>
+          <div class="time">₹{{item.orders.total_amount}}</div>
+          <div class="buttons d-flex justify-content-between">
+            <div>
+              <ion-button shape="round" color="warning" class="refund-button"
+                (click)="refund(item.orders.order_id, item.items, $event)">Refund</ion-button>
+            </div>
+            <div>
+              <ion-button shape="round" color="warning" class="print-button"
+                (click)="print(item.orders.order_id, $event)">Print</ion-button>
+            </div>
+          </div>
+        </ion-row>
+
+      </div>
+
+    </div>
+  </div>

@@ -1,0 +1,48 @@
+<!-- <ion-content overflow-scroll="false"> -->
+  <section>
+    <header class="d-flex align-items-center justify-content-between ">
+
+      <ion-menu-button content-Id="main-content"></ion-menu-button>
+      <h3 class="mt-2">
+        Expenses
+      </h3>
+      <mat-icon (click)="createExpense()" class="mx-3">loupe</mat-icon>
+    </header>
+
+    <section id="Expenses-Section">
+      <div class="container">
+        <div class="row">
+          <!------------------------------- boxes----------------------- -->
+          <div id="view-details" class="d-flex align-items-center justify-content-between mt-3">
+            <div class="Category-image">
+              <img src="../../assets/images/logo.jpg" alt="">
+            </div>
+            <div class="Category-Items-name ">
+              <h5>Shop Name</h5>
+            </div>
+            <div class="Amount">
+              <p><span class="material-symbols-outlined rupee-icon">
+                currency_rupee
+                </span> 1000</p>
+            </div>
+          </div>
+
+          <div id="view-details" class="d-flex align-items-center justify-content-between mt-3">
+            <div class="Category-image">
+              <img src="../../assets/images/logo.jpg" alt="">
+            </div>
+            <div class="Category-Items-name ">
+              <h5>Shop Name</h5>
+            </div>
+            <div class="Amount d-flex align-items-center">
+              <p><span class="material-symbols-outlined rupee-icon">
+                currency_rupee
+                </span> 2000</p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+  </section>

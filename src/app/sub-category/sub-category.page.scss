@@ -1,0 +1,72 @@
+#Sub-Category-Section {
+  height: 90vh;
+  overflow: auto;
+}
+
+// -------------------Sub-category-list-------------------
+.box-container {
+  border-radius: 15px;
+  margin-top: 30px;
+  background-color: #d1d1d15e;
+  // width: 124px;
+}
+
+.box-container:hover {
+  transform: scale(0.95);
+  transition: ease-in 0.5s;
+  cursor: pointer;
+}
+
+.enable {
+  box-shadow: #256748 0px 2px 8px 0px;
+  border: solid 2px green;
+}
+
+.disable {
+  box-shadow: #dc3545 0px 2px 8px 0px;
+  border: solid 2px red;
+}
+
+// ------------------------Icons--------------------------
+.edit-icon {
+  background-color: #c3d1e596;
+  height: 24px;
+  width: 24px;
+  border-radius: 30%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.delete-icon {
+  background-color: rgb(241 10 10 / 14%);
+  height: 24px;
+  width: 24px;
+  color: red;
+  border-radius: 30%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.icon-size{
+  font-size: 21px;
+}
+
+// ------------------------Image--------------------------
+.sub-image img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: solid 2px yellow;
+}
+
+//--------------------- Sub-type---------------------------
+.sub-type {
+  color: #eb492d;
+  font-weight: 700;
+}
+
+.sub-type-2 {
+  color: #158551;
+  font-weight: 700;
+}
+
+.sub-price p {
+  font-weight: 600;
+}

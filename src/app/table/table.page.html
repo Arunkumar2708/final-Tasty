@@ -1,0 +1,31 @@
+<header class="d-flex align-items-center justify-content-start ">
+
+  <ion-menu-button content-Id="main-content"></ion-menu-button>
+  <div class="w-100 text-center">
+  <h3 class="mt-2">
+   Transaction
+  </h3>
+</div>
+  <!-- <mat-icon (click)="createExpense()" class="mx-3 d-none">loupe</mat-icon> -->
+</header>
+<section id="Table-Section">
+  <div class="container ">
+    <div class="box d-flex align-items-center justify-content-center">
+    <div class="Tables ">
+      <div class="Total-Table mt-3 " >
+        <label for="">Total Table : {{dineInTableCount}}</label>
+      </div>
+      <div class="Total-Table mt-3 " >
+        <label for="">To be update : </label>
+        <input type="number" [(ngModel)]="dineInTableCountModel.count">
+      </div>
+      <div class="Add-Button mt-4 ">
+        <button (click)="submit('add')" >Increase</button>
+      </div>
+      <div class="Delete-Button mt-3">
+        <button (click)="submit('sub')">Dcrease</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

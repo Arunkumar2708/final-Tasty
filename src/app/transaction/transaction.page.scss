@@ -1,0 +1,67 @@
+
+.box{
+  height: 100px;
+  border: solid 2px #a5a5a5;
+  border-radius: 20px;
+}
+.line{
+  color: #a5a5a5;
+}
+p{
+  margin: 0;
+}
+section{
+  height: 100vh;
+}
+.container {
+  width: 90%;
+}
+.rupes-icon{
+  font-size: 14px;
+  font-weight: 600;
+}
+.income p{
+  font-weight: 700;
+}
+.income .Total-Amount{
+  color: green;
+}
+
+.expence p{
+  font-weight: 700;
+}
+.expence .Total-Amount{
+  color: red;
+}
+
+.cash{
+  height: 49px;
+  border: solid 2px #a5a5a5;
+  padding: 7px;
+  border-radius: 11px;
+  font-weight: 600;
+}
+.method-name{
+  font-weight: 700;
+ 
+}
+.cad{
+  height: 49px;
+  border: solid 2px #a5a5a5;
+  padding: 7px;
+  border-radius: 11px;
+  font-weight: 600;
+}
+.upi{
+  height: 49px;
+  border: solid 2px #a5a5a5;
+  padding: 7px;
+  border-radius: 11px;
+  font-weight: 600;
+}
+.income-list .Total-Amount{
+  color: green;
+}
+.expence-list .Total-Amount{
+  color: red;
+}

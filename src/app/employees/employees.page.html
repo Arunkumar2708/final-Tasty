@@ -1,0 +1,56 @@
+<!-- <ion-content overflow-scroll="false"> -->
+  <section>
+    <header class="d-flex align-items-center justify-content-between ">
+
+      <ion-menu-button content-Id="main-content"></ion-menu-button>
+      <h3 class="mt-2">
+        Employees
+      </h3>
+      <mat-icon (click)="createEmployee()" class="mx-3">loupe</mat-icon>
+  
+    </header>
+
+    <section id="Employee-Section">
+      <div class="container">
+        <div class="row">
+          <!-- ------------------------------boxes ------------------->
+          <div id="view-details" class="d-flex align-items-center justify-content-between text-center ">
+            <div class="Category-image">
+              <img src="../../assets/images/logo.jpg" alt="">
+            </div>
+            <div class="Category-Items-name ">
+              <h3>Employe-1</h3>
+              <p>No : 1234567890</p>
+            </div>
+            <div class="d-flex">
+              <div class="edit-icon d-flex align-items-center justify-content-center me-3">
+                <mat-icon (click)="editEmployee()">edit</mat-icon>
+              </div>
+              <div class="delete-icon d-flex align-items-center justify-content-center ">
+                <mat-icon>delete_forever</mat-icon>
+              </div>
+            </div>
+          </div>
+
+          <div id="view-details" class="d-flex align-items-center justify-content-between text-center mt-3">
+            <div class="Category-image">
+              <img src="../../assets/images/logo.jpg" alt="">
+            </div>
+            <div class="Category-Items-name ">
+              <h3>Employe-1</h3>
+              <p>No : 1234567890</p>
+            </div>
+            <div class="d-flex">
+              <div class="edit-icon d-flex align-items-center justify-content-center me-3">
+                <mat-icon (click)="editEmployee()">edit</mat-icon>
+              </div>
+              <div class="delete-icon d-flex align-items-center justify-content-center ">
+                <mat-icon>delete_forever</mat-icon>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </section>

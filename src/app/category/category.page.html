@@ -1,0 +1,42 @@
+<!-- <ion-content overflow-scroll="false"> -->
+  <section>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <!-- <ion-refresher-content pullingIcon="chevron-down" pullingText="Pull to refresh"> -->
+        <!-- <ion-refresher-content refreshingSpinner="circles" refreshingText="Refreshing..."> -->
+        <!-- </ion-refresher-content> -->
+      <!-- </ion-refresher-content> -->
+    </ion-refresher>
+    <header class="d-flex align-items-center justify-content-between">
+
+      <ion-menu-button content-Id="main-content"></ion-menu-button>
+      <h3 class="mt-2">
+        Category
+      </h3>
+      <mat-icon (click)="addcategory()" class="mx-3">loupe</mat-icon>
+
+    </header>
+    <section id="Category-Section">
+      <div class="container" *ngFor="let datas of list;let j= index;">
+        <div class="row">
+          <div [id]="datas.status == 1 ? 'view-details-2' : 'view-details'" (click)="gosubcategory(datas)"
+            class="d-flex align-items-center justify-content-between mt-3">
+            <div *ngIf="datas.category_image !=''; else elseBlock" class="Category-image">
+              <img src={{image_url}}{{datas.category_image}} alt="">
+            </div>
+            <ng-template #elseBlock>
+              <div class="Category-image">
+                <img [src]="" alt="">
+              </div>
+            </ng-template>
+            <div class="Category-Items-name ">
+              <h2>{{datas.category_name}}</h2>
+            </div>
+            <div>
+              <mat-icon (click)="goedit($event, datas)" class="edit-icon ">edit</mat-icon>
+              <mat-icon (click)="showAlert(datas.category_id, datas.category_name, $event)" class="delete-icon">delete_forever</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>

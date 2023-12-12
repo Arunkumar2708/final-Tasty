@@ -1,0 +1,64 @@
+<!-- <section class="holl"> -->
+
+  <div class="head">
+    <p class="title">Preview-Orders</p>
+  </div>
+  <div class="container">
+  <div class="quantity" *ngFor="let product of productArray">
+    <ion-row class="orders">
+      <ion-col size="4">
+        <img src={{image_url}}{{product.sub_category_image}} class="img">
+
+      </ion-col>
+      <ion-col size="4"> 
+        <ion-row>
+          <p>{{product.sub_category_name}}</p>
+        </ion-row>
+
+        <ion-row>
+          <div class="count">
+            <div class="quantity">
+              <div class="wrapper">
+                <span class="minus" (click)="dec(product)">-</span>
+                <span class="number"> {{product.qty}}</span>
+                <span class="plus" (click)="inc(product)">+</span>
+              </div>
+            </div>
+          </div>
+        </ion-row>
+      </ion-col>
+      <ion-col size="4">
+        <div class="amount">{{product.price * product.qty}}</div>
+
+      </ion-col>
+
+    </ion-row>
+  </div>
+
+  <div class="box" *ngIf="order_type != 1 || (order_type == 1 && is_extra_items == 1); else elseBlock">
+    <ion-button (click)="onsubmit($event)" class="btn" color="warning" size="small">NEXT</ion-button>
+  </div>
+
+  <ng-template #elseBlock>
+    <div class="box">
+      <ion-button id="open-modal" color="warning" class="btn" size="small">PROCEED</ion-button>
+    </div>
+  </ng-template>
+
+
+  <div class="box">
+
+    <ion-modal class="wrap-content-modal" trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+      <ng-template>
+
+        <ion-item class="item">
+          <ion-input id ="customer_number" class="input" type="tel" ngModel [(ngModel)]="finalProductModel.customer_number" placeholder="MOBILE NO"></ion-input>
+        </ion-item>
+
+        <ion-button (click)="onsubmit($event)" class="kot" color="warning" shape=round size="small">KOT</ion-button>
+      </ng-template>
+    </ion-modal>
+
+  </div>
+</div>
+<!-- </section> -->
